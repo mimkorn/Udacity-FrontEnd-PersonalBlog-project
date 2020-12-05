@@ -1,0 +1,60 @@
+.blogs-flex {
+    display: flexbox;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 2fr 4fr;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "main main sidebar";
+    gap: 10px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.main {
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    position: relative;
+}
+
+.header {
+    grid-area: header;
+}
+
+.blog-item {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "title title"
+    "pic abstract";
+}
+
+.blog-item h1 {
+    font-size: larger;
+    color: #F0D;
+    grid-area: title;
+}
+
+.blog-item img {
+    grid-area: pic;
+    width: 120px;
+    height: auto;
+}
+
+.blog-item p {
+    grid-area: abstract;
+}
+
+.social-links { 
+    position: absolute;
+    bottom: 0;
+}
