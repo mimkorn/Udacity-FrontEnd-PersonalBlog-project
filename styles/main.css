@@ -4,29 +4,25 @@
 
 .container {
     display: grid;
-    grid-template-rows: 2fr 4fr;
-    grid-template-columns: 2fr 2fr 1fr;
-    grid-template-areas: 
-    "header header header"
-    "main main sidebar";
+    grid-template-areas: "header header header"; /* Experimenting combining explicit and implicit grid. */
+    grid-template-columns: [content-start] 2fr 2fr [content-end sidebar-start] 1fr [sidebar-end];
+    grid-auto-rows: 200px;
     gap: 10px;
     width: 100vw;
     height: 100vh;
 }
 
-
-
-.main {
-    grid-area: main;
+.article-box {
+    grid-row: span 2
 }
 
 .sidebar {
-    grid-area: sidebar;
-    position: relative;
+    grid-area: sidebar-start / 2 / sidebar-end / -1;
 }
 
 .header {
     grid-area: header;
+    /*grid-column: 1 / 1 / -1;*/
 }
 
 .blog-item {
