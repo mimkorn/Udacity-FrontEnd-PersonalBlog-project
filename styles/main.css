@@ -1,56 +1,200 @@
-.blogs-flex {
-    display: flexbox;
+html {
+    font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-    display: grid;
-    grid-template-areas: "header header header"; /* Experimenting combining explicit and implicit grid. */
-    grid-template-columns: [content-start] 2fr 2fr [content-end sidebar-start] 1fr [sidebar-end];
-    grid-auto-rows: 200px;
-    gap: 10px;
-    width: 100vw;
-    height: 100vh;
+body {
+    font-size: medium;
 }
 
-.article-box {
-    grid-row: span 2
+.page-wrap {
+    height: 98vh;
+}
+
+@media(min-width: 425px) {
+
+    .content-container {
+        box-sizing: border-box;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: visible;
+        display: grid;
+        gap: 1em;
+        grid-auto-rows: 140px;
+        grid-auto-flow: row dense;
+        grid-template-columns: 1fr 1fr;
+        margin: 0px -32px 0px -32px;
+        padding: 19px 32px 19px 60px;
+    }
+
+    .leading-card {
+        grid-column: 2;
+    }
+}
+
+@media(min-width: 1024px) {    
+    .main-container {
+        height: 100%;
+        display: grid;
+        grid-template-areas: 
+            "header header" 
+            "content sidebar"
+            "content social" 
+            "footer footer";
+        grid-template-rows: auto 1fr auto auto;
+        grid-template-columns: 3fr 1fr;
+        gap: 1em;
+        max-width: 70em;
+        min-width: 40em;
+        margin: auto;
+        overflow-y: hidden;
+    }
+
+    .content-container::-webkit-scrollbar {
+        width: 0 !important
+    }
+
+    .content-container-gradienter {
+        position: relative;
+        grid-area: content;
+    }
+
+    .content-container::after {
+        /* Ensures shadow of last item can be scrolled into view. */
+        content: "";
+        display: block;
+        height: 160px;
+        width: 100%;
+    }
+    
+    .content-container-gradienter::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 25px;
+        background: linear-gradient(white, rgba(255, 255, 255, 0.001));
+    }
+    
+    .content-container-gradienter::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 25px;
+        background: linear-gradient(rgba(255, 255, 255, 0.001), white);
+    }
+
+    .blog-item:nth-last-child(1) {
+        margin-bottom: 1em;
+    }
+}
+
+.content-container a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .sidebar {
-    grid-area: sidebar-start / 2 / sidebar-end / -1;
+    grid-area: sidebar;
+    margin: 1rem;
+    min-height: 5rem;
+    overflow: hidden;
+}
+
+.leading-card {
+    place-self: center;
 }
 
 .header {
     grid-area: header;
-    /*grid-column: 1 / 1 / -1;*/
+    text-align: right;
+    border-bottom: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, white 60%, black);
+}
+
+.header h1 {
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 400;
 }
 
 .blog-item {
+    grid-row: span 2;
+    padding: 0.5em;
     display: grid;
-    grid-template-rows: 1fr 2fr;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas:
-    "title title"
-    "pic abstract";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "title title" "pic abstract";
+    transition: box-shadow 2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+}
+
+.blog-item:hover {
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    /* borrowed from https://getcssscan.com/css-box-shadow-examples as #57 by Facebook*/
 }
 
 .blog-item h1 {
     font-size: larger;
-    color: #F0D;
+    color: rgb(59, 59, 59);
     grid-area: title;
+    max-height: 3.4rem;
+    margin: 0.5rem 0.3rem;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.image {
+    overflow: hidden;
 }
 
 .blog-item img {
+    box-sizing: border-box;
+    object-fit: cover;
     grid-area: pic;
-    width: 120px;
-    height: auto;
+    height: 100%;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    padding: 0.4em;
+    border-radius: 9px;
+}
+
+p {
+    font-size: medium;
+    text-align: justify;
+    hyphens: auto;
+    word-break: break-word;
+    font-weight: 200;
 }
 
 .blog-item p {
     grid-area: abstract;
+    margin: 0.3rem 1rem;
+    overflow: hidden;
 }
 
-.social-links { 
-    position: absolute;
-    bottom: 0;
+.social-links {
+    grid-area: social;
+    align-self: end;
+    margin: 1rem;
+}
+
+.welcome-arrow {
+    display: block;
+    width: 70%;
+    margin-top: -1.3rem;
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
 }
