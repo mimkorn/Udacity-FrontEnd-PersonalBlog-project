@@ -9,6 +9,9 @@ body {
 .page-wrap {
     height: 98vh;
 }
+a {
+    color: black;
+}
 
 @media(min-width: 425px) {
 
