@@ -24,16 +24,14 @@
 }
 
 .blog-item {
-    grid-row: span 2;
     padding: 0.5em;
-    margin: 1em 0;
+    margin: 0.5em 0;
     display: grid;
     max-width: 500px;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 2fr 3fr;
     grid-template-areas:
-        "title title"
-        "pic abstract";
+        "title"
+        "pic" 
+        "abstract";
 }
 
 .blog-item,
@@ -76,12 +74,13 @@
 
 .blog-item .image {
     overflow: hidden;
+    grid-area: pic;
+    max-height: 50vh;
 }
 
 .blog-item img {
     box-sizing: border-box;
     object-fit: cover;
-    grid-area: pic;
     height: 100%;
     width: 100%;
     display: block;
@@ -99,6 +98,16 @@
     display: block;
     width: 70%;
     margin: -1.3rem 0 0em 2em;
+}
+
+@media (min-width: 496px) {
+    .blog-item {
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 2fr 3fr;
+        grid-template-areas:
+            "title title"
+            "pic abstract";
+    }
 }
 
 @media (min-width: 624px) {
@@ -127,6 +136,7 @@
 
     .blog-item {
         margin: 0.5em;
+        grid-row: span 2;
     }
 }
 
