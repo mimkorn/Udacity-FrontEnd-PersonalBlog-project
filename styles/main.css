@@ -3,11 +3,15 @@
     font-size: medium;
 }
 
-.page-wrap {
-    height: 98vh;
-}
 a {
     color: black;
+}
+
+.page-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 98vh;
+    align-items: center;
 }
 
 .button {
@@ -16,21 +20,26 @@ a {
     border: none;
     padding: 15px 42px;
     text-decoration: none;
-    align-self: center;
     font-size: 16px;
 }
 
-
+.subscribe {
+    grid-area: subscribe;
+    align-self: center;
+    justify-self: center;
+}
 
 .main-container {
     display: grid;
     grid-template-areas: 
         "header" 
         "sidebar"
+        "subscribe"
         "content"
         "social" 
         "footer";
     gap: 1em;
+    margin: 20px;
 }
 
 .content-container {
@@ -75,7 +84,7 @@ h1 {
 .blog-item {
     grid-row: span 2;
     padding: 0.5em;
-    margin: 1em;
+    margin: 1em 0;
     display: grid;
     max-width: 500px;
     grid-template-rows: auto 1fr;
@@ -148,8 +157,6 @@ p {
     grid-area: social;
     align-self: end;
     margin: 1rem;
-    display: flex;
-    flex-direction: column;
 }
 
 .welcome-arrow {
@@ -161,6 +168,15 @@ p {
 .footer {
     grid-area: footer;
     text-align: center;
+}
+
+@media(min-width: 624px) {
+    .subscribe {
+        grid-area: 1/1/2/2;
+        align-self: center;
+        justify-self: left;
+        margin: 0 0 0 35px;
+    }
 }
 
 @media(min-width: 768px) {
@@ -181,8 +197,6 @@ p {
         grid-auto-rows: 140px;
         grid-auto-flow: row dense;
         grid-template-columns: 1fr 1fr;
-        margin: 0px -32px 0px -32px;
-        padding: 19px 32px 19px 60px;
     }
 
     .blog-item {
@@ -191,6 +205,11 @@ p {
 }
 
 @media(min-width: 1024px) {    
+
+    .content-container {
+        margin: 0px -32px 0px -32px;
+        padding: 19px 32px 19px 60px;
+    }
 
     .main-container {
         height: 100%;
@@ -203,7 +222,7 @@ p {
         grid-template-columns: 3fr 1fr;
         max-width: 70em;
         min-width: 40em;
-        margin: auto;
+        margin: 0 20px;
         overflow-y: hidden;
     }
 
