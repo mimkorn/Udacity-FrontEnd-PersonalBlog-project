@@ -3,44 +3,143 @@
 
 <head>
     <title>The Duck Article</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles/styles.css" />
 </head>
 
-<body>
-    <h1>The article about a duck</h1>
-    <header>
-        <nav>
-            <a href="../index.html">Home</a>
-        </nav>
-    </header>
-    <article class="blog-content">
-        <h1>article header</h1>
-        <p>This is the blog article itself
-            suscipit enim eu, commodo nibh. Proin faucibus bibendum urna sit amet venenatis. giat
-            dolor, sit amet venenatis dui pdo mi sol
-        </p>
-        <aside>This is offered as an aside, containing important quote or some other piece of relevant information that should stand out.</aside>
-            et mi. Phasellus finibus posuere mi, sed
-            imperdiet ligula eleifend eget. Vestibulum viverra, turpis a finibus laoreet, risus nunc p
-            suscipit enim eu, commodo nibh. Proin faucibus bibendum urna sit amet <strong>strong words</strong> venenatis. giat
-            dolor, sit amet venenatis dui pdo mi sol <em>emphasized part of sentence</em>.
-            imperdiet ligula eleifend eget. Vestibulum viverra, turpis a finibus laoreet, risus nunc p
-            <img alt="This duck will be shown on the side, things going around it" src="../media/duck.jpg">
-            suscipit enim eu, commodo nibh. Proin faucibus bibendum urna sit amet venenatis. giat
-            dolor, sit amet venenatis dui pdo mi sol
-            et mi. Phasellus finibus posuere mi, sed
-            imperdiet ligula eleifend eget. Vestibulum viverra, turpis a finibus laoreet, risus nunc p
-    </article>
-
-    <footer>
+<body class="body page-wrap">
+    <div class="main-container">
+        <header class="header">
+            <h1>Simon Demo's blog</h1>
+        </header>
+        <button class="button subscribe" onclick="location.href='http://www.mailchimp.com'" type="button">
+            Subscribe
+        </button>
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Back home</a></li>
+                    <li><a href="../blogs/walle.html">Next story</a></li>
+                </ul>
+            </nav>
+        </div>
         <section class="social-links">
-            <h1>Socializzard</h1>
+            <h1>Share this on</h1>
             <ul>
-                <li>Facebook</li>
-                <li>Twitter</li>
-                <li>LinkedIn</li>
+                <li><a href="https://www.Facebook.com">Facebook</a></li>
+                <li><a href="https://www.twitter.com">Twitter</a></li>
+                <li><a href="https://www.linkedin.com">LinkedIn</a></li>
             </ul>
         </section>
-    </footer>
+        <div class="content-container-gradienter">
+            <div class="content-container blog-content">
+                <article>
+                    <h1>Hoc mihi cum tuo fratre convenit</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid ergo
+                        attinet dicere: Nihil haberem, quod reprehenderem, si finitas
+                        cupiditates haberent? Minime vero, inquit ille, consentit.
+                        <a href="http://loripsum.net/" target="_blank">
+                            Rationis enim perfectio est virtus;
+                        </a>
+                    <figure class="left-aside">
+                        <img class="image-aside" alt="This duck will be shown on the side, things going around it"
+                            src="../media/duck.jpg" />
+                        <figcaption>This is what I saw quacking on the internet</figcaption>
+                    </figure>
+                    Duo Reges: constructio interrete. Illud quaero, quid ei, qui in
+                    voluptate summum bonum ponat, consentaneum sit dicere.Quasi ego id
+                    curem, quid ille aiat aut neget.
+                    </p>
+
+                    <ol>
+                        <li>Et harum quidem rerum facilis est et expedita distinctio.</li>
+                        <li>Profectus in exilium Tubulus statim nec respondere ausus;</li>
+                        <li>Comprehensum, quod cognitum non habet?</li>
+                        <li>Quasi ego id curem, quid ille aiat aut neget.</li>
+                    </ol>
+
+                    <p>
+                        Tum Piso: Quoniam igitur aliquid omnes, quid Lucius noster?
+                        <strong>strong words</strong> venenatis. giat dolor, sit amet
+                        venenatis dui pdo mi sol <em>emphasized part of sentence</em>. Cum
+                        ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus
+                        haec. Quo plebiscito decreta a senatu est consuli quaestio Cn. Et
+                        harum quidem rerum facilis est et expedita distinctio. Non quaeritur
+                        autem quid naturae tuae consentaneum sit, sed quid disciplinae.
+                    </p>
+
+                    <p>
+                        saneque fidenter: Istis quidem ipsis verbis, inquit; Tum ille: Tu
+                        autem cum ipse tantum librorum habeas, quos hic tandem requiris? -,
+                        sed ut hoc iudicaremus, non esse in iis partem maximam positam beate
+                        aut secus vivendi. Virtutibus igitur rectissime mihi videris et ad
+                        consuetudinem nostrae orationis vitia posuisse contraria.
+                        Progredientibus autem aetatibus sensim tardeve potius quasi nosmet
+                        ipsos cognoscimus. Illa videamus, quae a te de amicitia dicta sunt.
+                    </p>
+
+                    <h2>Non potes, nisi retexueris illa.</h2>
+
+                    <p>
+                        Non est igitur voluptas bonum. Tu vero, inquam, ducas licet, si
+                        sequetur; Quare obscurentur etiam haec, quae secundum naturam esse
+                        dicimus, in vita beata; Quae si potest singula consolando levare,
+                        universa quo modo sustinebit? Haec igitur Epicuri non probo, inquam.
+                        Hoc ne statuam quidem dicturam pater aiebat, si loqui posset. Teneo,
+                        inquit, finem illi videri nihil dolere.
+                    </p>
+                    <aside class="right-aside quote-aside">
+                        This is offered as an aside, containing important quote or some
+                        other piece of relevant information that should stand out.
+                    </aside>
+                    <ul>
+                        <li>
+                            Est autem etiam actio quaedam corporis, quae motus et status
+                            naturae congruentis tenet;
+                        </li>
+                        <li>Ad eas enim res ab Epicuro praecepta dantur.</li>
+                        <li>
+                            Illud mihi a te nimium festinanter dictum videtur, sapientis omnis
+                            esse semper beatos;
+                        </li>
+                        <li>Praeclare hoc quidem.</li>
+                    </ul>
+
+                    <p>
+                        Quamquam id quidem, infinitum est in hac urbe;
+                        <a href="http://loripsum.net/" target="_blank"></a>
+                        Quare attende, quaeso.
+                        </a>
+                        Nummus in Croesi divitiis obscuratur, pars est tamen divitiarum.
+                        Gloriosa ostentatio in constituendo summo bono. Familiares nostros,
+                        credo, Sironem dicis et Philodemum, cum optimos viros, tum homines
+                        doctissimos. Nihil opus est exemplis hoc facere longius.
+                        <strong>
+                            Res enim se praeclare habebat, et quidem in utraque
+                            parte. </strong>
+                    </p>
+
+                    <blockquote cite="http://loripsum.net">
+                        Quin etiam ipsi voluptarii deverticula quaerunt et virtutes habent
+                        in ore totos dies voluptatemque primo dumtaxat expeti dicunt, deinde
+                        consuetudine quasi alteram quandam naturam effici, qua inpulsi multa
+                        faciant nullam quaerentes voluptatem.
+                    </blockquote>
+                </article>
+                <div class="author-card">
+                    <h2 class="author-name">Mgr. Šimon Demočko</h2>
+                    <h3 class="author-university">Masaryk University</h3>
+                    <p class="author-bio">Quin etiam ipsi voluptarii deverticula quaerunt et virtutes habent
+                        in ore totos dies voluptatemque primo dumtaxat expeti dicunt, deinde
+                        consuetudine quasi alteram qua</p>
+                    <img src="https://s3-us-west-2.amazonaws.com/udacity-profiles/production/photo/cfc91565-a6ca-49c9-8e80-cd17e3fb3ef6.png"
+                        class="author-avatar"></img>
+                </div>
+            </div>
+        </div>
+        <pre class="footer">2021 Simon Demo</pre>
+    </div>
 </body>
 
 </html>
